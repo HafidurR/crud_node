@@ -22,9 +22,7 @@ app.get('/user', (req, res) =>{
         if (err) throw err
         res.send(rows);
     })
-}
-)
-
+})
 
 app.post('/user', (req, res) => {
     let data = [
