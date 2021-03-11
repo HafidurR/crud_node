@@ -16,8 +16,7 @@ koneksi.connect(function(err){
 );
 
 
-app.get('/user',
-(req, res) =>{
+app.get('/user', (req, res) =>{
     let sql = "SELECT * FROM user ORDER BY id desc";
     let query = koneksi.query(sql, function (err, rows, fields){
         if (err) throw err
@@ -26,8 +25,8 @@ app.get('/user',
 }
 )
 
-app.post('/user', 
-    (req, res) => {
+
+app.post('/user', (req, res) => {
     let data = [
         req.body.nama, 
         req.body.alamat,
@@ -39,8 +38,7 @@ app.post('/user',
     })
 })
 
-app.put('/user',
-    (req, res) => {
+app.put('/user', (req, res) => {
     let sql = "UPDATE user SET nama='" + req.body.nama + "', alamat='" + req.body.alamat + "' WHERE id=" + req.body.id;
       let query = koneksi.query(sql, function (err, rows, fields) {
           if (err) throw err
@@ -58,7 +56,6 @@ app.put('/user',
  })
  
         
-app.listen(port, 
-        () => {
-            console.log(`Server sudah berjalan di port : ` + port)
-        });
+app.listen(port, () => {
+        console.log(`Server sudah berjalan di port : ` + port)
+    });
