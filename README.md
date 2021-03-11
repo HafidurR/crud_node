@@ -1,2 +1,2 @@
 # crud_node
-Jangan lupa install library *dotenv*
+Jangan lupa install library **dotenv**
