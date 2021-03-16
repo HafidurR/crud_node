@@ -36,8 +36,10 @@ app.post('/user', (req, res) => {
     })
 })
 
-app.put('/user', (req, res) => {
-    let sql = "UPDATE user SET nama='" + req.body.nama + "', alamat='" + req.body.alamat + "' WHERE id=" + req.body.id;
+app.put('/user/:id', (req, res) => {
+    let sql = "UPDATE user SET nama='" + req.body.nama + 
+                            "', alamat='" + req.body.alamat + 
+                             "' WHERE id=" + req.params.id;
       let query = koneksi.query(sql, function (err, rows, fields) {
           if (err) throw err
           res.send('EDIT sukses');
